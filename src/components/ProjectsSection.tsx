@@ -36,7 +36,7 @@ const ProjectsSection: React.FC = () => {
         "Data modeling",
         "Structured documentation"
       ],
-      url: "#"
+      url: "https://isdapresyo.vercel.app/"
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const ProjectsSection: React.FC = () => {
         "Rule-based reasoning",
         "AI environment simulation"
       ],
-      url: "#"
+      url: "https://wumpus-world-peach.vercel.app/"
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ const ProjectsSection: React.FC = () => {
         "System architecture",
         "Database implementation"
       ],
-      url: "#"
+      url: "https://fin-tech-rose.vercel.app/"
     }
   ];
 
