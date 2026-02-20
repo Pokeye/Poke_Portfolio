@@ -14,24 +14,10 @@ const EducationTimeline: React.FC = () => {
   const educationData: Education[] = [
     {
       id: 1,
-      years: "202X–202X",
-      degree: "B.Tech, Computer Science",
-      institution: "IIT Dholakpur",
+      years: "2023–Present",
+      degree: "Computer Science",
+      institution: "Sorsogon State University",
       grade: "GPA: X/10"
-    },
-    {
-      id: 2,
-      years: "202X–202X",
-      degree: "Higher Secondary Education",
-      institution: "XX School",
-      grade: "Percentage: XX%"
-    },
-    {
-      id: 3,
-      years: "201X–202X",
-      degree: "Secondary Education",
-      institution: "Delhi Public School",
-      grade: "CGPA: XX/10"
     }
   ];
 

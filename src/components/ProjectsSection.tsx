@@ -16,44 +16,50 @@ const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Project 1",
-      description: "xyz",
-      techStack: ["React", "Node.js", "Express"],
+      title: "AI for Post-Disaster Damage Assessment Using Drone/Aerial Images",
+      description: "Status: Work in Progress. AI-driven research project focused on detecting and classifying infrastructure damage from drone and aerial imagery for rapid assessment and recovery planning.",
+      techStack: [
+        "Image recognition and classification",
+        "Infrastructure damage detection",
+        "Dataset preprocessing and feature extraction",
+        "Model performance evaluation"
+      ],
       url: "#"
     },
     {
       id: 2,
-      title: "Project 2",
-      description: "abc",
-      techStack: ["Vue.js", "Django", "MongoDB"],
+      title: "Fish Price Monitoring System",
+      description: "Structured information system designed to monitor and analyze fish pricing data for improved transparency and decision-making.",
+      techStack: [
+        "System requirements analysis",
+        "Database schema design",
+        "Data modeling",
+        "Structured documentation"
+      ],
       url: "#"
     },
     {
       id: 3,
-      title: "Project 3",
-      description: "123",
-      techStack: ["Angular", "Flask", "PostgreSQL"],
+      title: "Wumpus World (AI Problem-Solving Simulation)",
+      description: "Implementation of the classic Wumpus World environment for AI studies with an intelligent agent navigating uncertainty using logical inference.",
+      techStack: [
+        "Knowledge-based agents",
+        "Propositional logic",
+        "Rule-based reasoning",
+        "AI environment simulation"
+      ],
       url: "#"
     },
     {
       id: 4,
-      title: "Project 4",
-      description: "456",
-      techStack: ["Svelte", "Ruby on Rails", "MySQL"],
-      url: "#"
-    },
-    {
-      id: 5,
-      title: "Project 5",
-      description: "789",
-      techStack: ["Next.js", "Spring Boot", "SQLite"],
-      url: "#"     
-    },
-    {
-      id : 6,
-      title: "Project 6",
-      description: "101",
-      techStack: ["Golang", "ASP.NET", "Firebase"],
+      title: "FinTech System Concept",
+      description: "Financial technology system concept focused on digital transactions and structured financial data processing, including workflows and secure data management.",
+      techStack: [
+        "Financial data modeling",
+        "Transaction logic design",
+        "System architecture",
+        "Database implementation"
+      ],
       url: "#"
     }
   ];

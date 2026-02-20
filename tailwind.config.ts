@@ -99,12 +99,12 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': { 
-						opacity: '0.5',
-						filter: 'blur(60px)'
+						opacity: '0.4',
+						filter: 'blur(36px)'
 					},
 					'50%': { 
-						opacity: '0.8',
-						filter: 'blur(80px)'
+						opacity: '0.6',
+						filter: 'blur(48px)'
 					}
 				},
 				'light-flash': {
@@ -142,8 +142,8 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'scroll-left': 'scroll-right 20s linear infinite',
-				'scroll-right': 'scroll-left 20s linear infinite',
+				'scroll-left': 'scroll-right 35s linear infinite',
+				'scroll-right': 'scroll-left 35s linear infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'glow-pulse': 'glow-pulse 4s ease-in-out infinite',
 				'light-flash': 'light-flash 8s infinite',

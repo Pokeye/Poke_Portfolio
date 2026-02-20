@@ -1,10 +1,11 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, X, Linkedin } from 'lucide-react';
 import { toast } from 'sonner';
 
 const ContactSection: React.FC = () => {
+  const formEndpoint = "https://formspree.io/f/xojnnznd";
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,16 +19,56 @@ const ContactSection: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name.length < 2) {
+      toast.error('Please enter your name.');
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
+    if (message.length < 10) {
+      toast.error('Please enter a longer message.');
+      return;
+    }
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const formPayload = new FormData();
+      formPayload.append('name', name);
+      formPayload.append('email', email);
+      formPayload.append('message', message);
+
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        body: formPayload,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
       toast.success('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast.error('Could not send message. Please try again.');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -123,7 +164,7 @@ const ContactSection: React.FC = () => {
               
               <div className="flex space-x-6 mb-6">
                 <a 
-                  href="https://github.com/" 
+                  href="https://github.com/Pokeye" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="p-3 border border-dark-200 rounded-full hover:border-white/40 transition-all hover:scale-110 group"
@@ -136,7 +177,7 @@ const ContactSection: React.FC = () => {
                 </a>
                 
                 <a 
-                  href="https://twitter.com/" 
+                  href="https://x.com/Poke6_9" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="p-3 border border-dark-200 rounded-full hover:border-white/40 transition-all hover:scale-110 group"
@@ -144,22 +185,19 @@ const ContactSection: React.FC = () => {
                     boxShadow: '0 0 10px rgba(255, 255, 255, 0.05)'
                   }}
                 >
-                  <Twitter className="w-5 h-5 group-hover:text-white transition-colors" />
+                  <X className="w-5 h-5 group-hover:text-white transition-colors" />
                   <div className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 blur-md -z-10 transition-opacity"></div>
                 </a>
                 
-                <a 
-                  href="https://linkedin.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="p-3 border border-dark-200 rounded-full hover:border-white/40 transition-all hover:scale-110 group"
+                <div
+                  aria-label="LinkedIn (coming soon)"
+                  className="p-3 border border-dark-200 rounded-full opacity-40 cursor-not-allowed"
                   style={{
                     boxShadow: '0 0 10px rgba(255, 255, 255, 0.05)'
                   }}
                 >
-                  <Linkedin className="w-5 h-5 group-hover:text-white transition-colors" />
-                  <div className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 blur-md -z-10 transition-opacity"></div>
-                </a>
+                  <Linkedin className="w-5 h-5" />
+                </div>
               </div>
               
               <div className="text-center relative z-10">
