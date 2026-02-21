@@ -344,6 +344,30 @@
   }
 }
 
+@media (max-width: 768px) {
+  body {
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.06) 0%, transparent 55%);
+  }
+
+  .bg-radial-glow-premium,
+  .corner-light-premium,
+  .corner-light {
+    opacity: 0.35;
+    filter: none;
+  }
+
+  .light-ray-premium {
+    opacity: 0.12;
+  }
+
+  .hero-text-gradient {
+    background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+  }
+}
+
 @keyframes light-flash-premium {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 0.4; }
