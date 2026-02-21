@@ -203,10 +203,10 @@ const ContactSection: React.FC = () => {
               <div className="text-center relative z-10">
                 <p className="text-white/70 mb-1">Or email me at:</p>
                 <a 
-                  href="mailto:john@example.com" 
+                  href="mailto:justinleafar@gmail.com" 
                   className="text-white hover:underline hover:text-white/90 transition-colors relative group"
                 >
-                  john@example.com
+                  justinleafar@gmail.com
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white/50 group-hover:w-full transition-all duration-300"></span>
                 </a>
               </div>
